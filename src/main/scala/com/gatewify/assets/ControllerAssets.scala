@@ -25,7 +25,9 @@ class ControllerAssets extends ControllerBase {
 		.map { asset =>
 			JsonFormat(ApiReleaseAsset(asset, RepositoryName(repository)))
 		}
-		.getOrElse(archiveRepository(name, repository, ""))
+		.getOrElse{
+			archiveRepository(name, repository, "")
+		}
 	})
 	get("/api/v3/repos/:owner/:repository/releases/:tag/assets/latest.zip")(referrersOnly { repository =>
 		val name = params("tag")
@@ -33,7 +35,9 @@ class ControllerAssets extends ControllerBase {
 		.map { asset =>
 			JsonFormat(ApiReleaseAsset(asset, RepositoryName(repository)))
 		}
-		.getOrElse(archiveRepository(name, repository, ""))
+		.getOrElse{
+			archiveRepository(name, repository, "")
+		}
 	})
 
 }
