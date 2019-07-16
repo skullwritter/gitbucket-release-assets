@@ -1,4 +1,4 @@
-import com.gatewify.assets
+import com.gatewify.assets.ControllerAssets
 import io.github.gitbucket.solidbase.model.Version
 
 class Plugin extends gitbucket.core.plugin.Plugin {
