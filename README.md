@@ -1,4 +1,4 @@
-gitbucket-plugin-template [![Build Status](https://travis-ci.org/skullwritter/gitbucket-release-assets.svg?branch=master)](https://travis-ci.org/gitbucket/gitbucket-plugin-template)
+gitbucket-release-assets [![Build Status](https://travis-ci.org/skullwritter/gitbucket-release-assets.svg?branch=master)](https://travis-ci.org/skullwritter/gitbucket-release-assets)
 ========
 Template project for GitBucket plugin
 

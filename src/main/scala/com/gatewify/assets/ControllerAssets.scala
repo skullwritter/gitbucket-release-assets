@@ -5,8 +5,6 @@ import gitbucket.core.controller._
 import gitbucket.core.controller.api._
 import gitbucket.core.controller.ControllerBase
 import gitbucket.core.controller.RepositoryViewerController
-## API
-## /:owner/:repository/archive/:NAME
 
 class ControllerAssets extends ControllerBase {
 	get("/api/v3/repos/:owner/:repository/releases/:tag/assets/latest")(referrersOnly { repository =>
