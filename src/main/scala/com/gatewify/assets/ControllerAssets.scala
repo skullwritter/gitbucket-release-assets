@@ -17,7 +17,7 @@ import gitbucket.core.util.SyntaxSugars.defining
 import org.apache.commons.io.FileUtils
 import org.scalatra.{Created, NoContent}
 
-class ControllerAssets extends ControllerBase implements ApiReleaseControllerBase, ReleaseControllerBase{
+class ControllerAssets extends ControllerBase with ApiReleaseControllerBase with ReleaseControllerBase{
 	get("/api/v3/repos/:owner/:repository/releases/:tag/assets/latest")(referrersOnly { repository =>
 		val name = params("tag")
 		getReleaseAsset(repository.owner, repository.name, name, fileId)
