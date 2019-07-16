@@ -13,12 +13,14 @@ import gitbucket.core.service.{AccountService, ReleaseService}
 import gitbucket.core.util.Directory.getReleaseFilesDir
 import gitbucket.core.util.{FileUtil, ReferrerAuthenticator, RepositoryName, WritableUsersAuthenticator}
 import gitbucket.core.util.Implicits._
+import gitbucket.core.service._
 import gitbucket.core.util.SyntaxSugars.defining
 import org.apache.commons.io.FileUtils
 import org.scalatra.{Created, NoContent}
 
 class ControllerAssets extends ControllerBase {
-	self: AccountService with ReleaseService with ReferrerAuthenticator with WritableUsersAuthenticator with ApiReleaseControllerBase =>
+	self: AccountService with ReleaseService with ReferrerAuthenticator with WritableUsersAuthenticator with ApiReleaseControllerBase with 
+    with RepositoryService =>
 	get("/api/v3/repos/:owner/:repository/releases/:tag/assets/latest")(referrersOnly { repository =>
 		val name = params("tag")
 		val assets = getReleaseAssets(repository.owner, repository.name, name)
